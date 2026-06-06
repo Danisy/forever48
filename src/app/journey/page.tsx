@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import SectionReveal from "@/components/SectionReveal";
 
@@ -172,11 +171,8 @@ export default function JourneyPage() {
       <section className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-24">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-pink-soft/8 blur-3xl" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center relative z-20"
+        <div
+          className="text-center relative z-20 hero-fade-up"
         >
           <p className="text-gold-light/30 text-sm tracking-[0.4em] uppercase mb-4">
             A Personal Story
@@ -184,16 +180,13 @@ export default function JourneyPage() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold gradient-text text-glow mb-4">
             My 48 Journey
           </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="h-px bg-gradient-to-r from-transparent via-gold-light/30 to-transparent max-w-md mx-auto mb-6"
+          <div
+            className="h-px bg-gradient-to-r from-transparent via-gold-light/30 to-transparent max-w-md mx-auto mb-6 hero-line-grow"
           />
-          <p className="text-cream/30 font-light max-w-lg mx-auto leading-relaxed">
+          <p className="text-cream/30 font-light max-w-lg mx-auto leading-relaxed hero-fade-in-d8">
             Every fan has a beginning. This is the story of how two worlds became one heart.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════ */}
@@ -240,14 +233,11 @@ export default function JourneyPage() {
 
                   {/* Timeline Node */}
                   <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex-shrink-0">
-                    <motion.div
-                      whileInView={{ scale: [0.5, 1.2, 1] }}
-                      transition={{ duration: 0.5 }}
-                      viewport={{ once: true }}
+                    <div
                       className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1A1118] flex items-center justify-center text-xs md:text-sm font-heading font-bold text-pink-soft/50 border border-pink-soft/20 shadow-lg shadow-pink-soft/10"
                     >
                       {milestone.numberLabel || String(index + 1).padStart(2, "0")}
-                    </motion.div>
+                    </div>
                   </div>
 
                   {/* Spacer for alternating layout */}

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import SectionReveal from "@/components/SectionReveal";
@@ -23,80 +22,41 @@ export default function HomePage() {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-gentle/8 blur-3xl animate-float [animation-delay:3s]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gold-light/5 blur-2xl" />
 
-        {/* Main Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center relative z-20"
-        >
+        {/* Main Title — Pure CSS animations, no JS dependency */}
+        <div className="text-center relative z-20 hero-fade-up">
           {/* Decorative element */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 0.2, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="text-pink-soft text-4xl mb-4 font-heading italic"
-          >
+          <div className="text-pink-soft text-4xl mb-4 font-heading italic opacity-20 hero-fade-in-d3">
             *
-          </motion.div>
+          </div>
 
           <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold gradient-text text-glow mb-4 tracking-tight">
             Forever 48
           </h1>
 
-          <motion.div
-            initial={{ opacity: 0, width: 0 }}
-            animate={{ opacity: 1, width: "100%" }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="h-px bg-gradient-to-r from-transparent via-pink-soft/30 to-transparent max-w-xs mx-auto mb-6"
-          />
+          <div className="h-px bg-gradient-to-r from-transparent via-pink-soft/30 to-transparent max-w-xs mx-auto mb-6 hero-line-grow" />
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="text-cream/50 text-lg sm:text-xl md:text-2xl font-light tracking-[0.3em] uppercase"
-          >
+          <p className="text-cream/50 text-lg sm:text-xl md:text-2xl font-light tracking-[0.3em] uppercase hero-fade-in-d8">
             Every fan has a story.
-          </motion.p>
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.0 }}
-            className="text-cream/40 text-md sm:text-lg mt-2 font-light tracking-[0.2em] uppercase"
-          >
+          <p className="text-cream/40 text-md sm:text-lg mt-2 font-light tracking-[0.2em] uppercase hero-fade-in-d10">
             This one is mine.
-          </motion.p>
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="text-cream/30 text-sm mt-6 font-light tracking-wider max-w-md mx-auto leading-relaxed"
-          >
+          <p className="text-cream/30 text-sm mt-6 font-light tracking-wider max-w-md mx-auto leading-relaxed hero-fade-in-d12">
             A journey through the music, memories, and members that turned ordinary moments into beautiful ones.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hero-fade-in-d20">
           <span className="text-cream/20 text-[10px] tracking-[0.4em] uppercase">
             Explore
           </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-5 h-8 rounded-full border border-cream/15 flex items-start justify-center p-1"
-          >
+          <div className="w-5 h-8 rounded-full border border-cream/15 flex items-start justify-center p-1 hero-bounce">
             <div className="w-1 h-2 rounded-full bg-pink-soft/40" />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════ */}
@@ -118,10 +78,8 @@ export default function HomePage() {
           {/* JKT48 Universe Card */}
           <SectionReveal delay={0.1} direction="left">
             <Link href="/jkt48" className="block group">
-              <motion.div
-                whileHover={{ scale: 1.03, y: -8 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer"
+              <div
+                className="relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer transition-transform duration-300 hover:scale-[1.03] hover:-translate-y-2 active:scale-[0.98]"
               >
                 {/* Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-deep/20 via-pink-soft/10 to-gold-light/10" />
@@ -154,17 +112,15 @@ export default function HomePage() {
 
                 {/* Border glow on hover */}
                 <div className="absolute inset-0 rounded-3xl border border-pink-soft/0 group-hover:border-pink-soft/20 transition-colors duration-500" />
-              </motion.div>
+              </div>
             </Link>
           </SectionReveal>
 
           {/* KLP48 Universe Card */}
           <SectionReveal delay={0.2} direction="right">
             <Link href="/klp48" className="block group">
-              <motion.div
-                whileHover={{ scale: 1.03, y: -8 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer"
+              <div
+                className="relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer transition-transform duration-300 hover:scale-[1.03] hover:-translate-y-2 active:scale-[0.98]"
               >
                 {/* Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-deep/20 via-purple-gentle/10 to-pink-soft/10" />
@@ -197,7 +153,7 @@ export default function HomePage() {
 
                 {/* Border glow on hover */}
                 <div className="absolute inset-0 rounded-3xl border border-purple-gentle/0 group-hover:border-purple-gentle/20 transition-colors duration-500" />
-              </motion.div>
+              </div>
             </Link>
           </SectionReveal>
         </div>
@@ -220,13 +176,11 @@ export default function HomePage() {
               Every fan has a story. A moment when a song changed everything. A smile that became your reason to smile. This is a personal timeline of how the 48 world became a part of my heart.
             </p>
             <Link href="/journey">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 glass rounded-full px-8 py-4 text-cream/50 hover:text-gold-light transition-colors duration-300 cursor-pointer"
+              <div
+                className="inline-flex items-center gap-3 glass rounded-full px-8 py-4 text-cream/50 hover:text-gold-light hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
               >
                 <span className="text-sm tracking-wider uppercase">Read My Story</span>
-              </motion.div>
+              </div>
             </Link>
           </div>
         </SectionReveal>

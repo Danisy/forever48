@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import SectionReveal from "@/components/SectionReveal";
 import MemberCard from "@/components/MemberCard";
@@ -69,11 +68,8 @@ export default function KLP48Page() {
         <div className="absolute top-1/3 right-1/3 w-80 h-80 rounded-full bg-purple-gentle/12 blur-3xl" />
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-pink-soft/8 blur-3xl" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center relative z-20"
+        <div
+          className="text-center relative z-20 hero-fade-up"
         >
           <p className="text-purple-gentle/40 text-sm tracking-[0.4em] uppercase mb-4">
             Welcome to the
@@ -81,16 +77,13 @@ export default function KLP48Page() {
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl font-bold gradient-text-cool text-glow mb-4">
             KLP48 Universe
           </h1>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="h-px bg-gradient-to-r from-transparent via-purple-gentle/40 to-transparent max-w-md mx-auto mb-6"
+          <div
+            className="h-px bg-gradient-to-r from-transparent via-purple-gentle/40 to-transparent max-w-md mx-auto mb-6 hero-line-grow"
           />
-          <p className="text-cream/35 font-light max-w-lg mx-auto leading-relaxed">
+          <p className="text-cream/35 font-light max-w-lg mx-auto leading-relaxed hero-fade-in-d8">
             Kuala Lumpur&apos;s rising constellation. A world of tender beginnings, quiet strength, and infinite potential.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════ */}
