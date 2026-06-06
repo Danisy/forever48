@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Color Palette ─── */
+  --color-pink-soft: #F8C8DC;
+  --color-pink-deep: #E8A0BF;
+  --color-pink-glow: #f9d4e2;
+  --color-cream: #FFF8F0;
+  --color-white-warm: #FFFDF9;
+  --color-gold-light: #F5DEB3;
+  --color-gold-accent: #D4AF37;
+  --color-purple-gentle: #C8A2C8;
+  --color-purple-deep: #9B7DB8;
+  --color-bg-dark: #1A1118;
+  --color-bg-darker: #0F0A0D;
+  --color-text-primary: #2D1F2D;
+  --color-text-secondary: #6B5A6B;
+
+  /* ─── Fonts ─── */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ─── Animations ─── */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-slide-up: slide-up 0.8s ease-out forwards;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-petal-fall: petal-fall 10s linear infinite;
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg-darker);
+  overflow-x: hidden;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--color-pink-soft),
+    var(--color-purple-gentle)
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-pink-deep),
+    var(--color-purple-deep)
+  );
+}
+
+/* ─── Keyframes ─── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(248, 200, 220, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(248, 200, 220, 0.6);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── Utility Classes ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-light {
+  background: rgba(255, 248, 240, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(248, 200, 220, 0.3);
+  box-shadow: 0 8px 32px rgba(248, 200, 220, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Performance optimized for many items (Timeline) */
+.glass-timeline {
+  background: rgba(35, 25, 30, 0.6); /* Fallback solid-ish */
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-timeline:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border-color: rgba(248, 200, 220, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(248, 200, 220, 0.5),
+    0 0 80px rgba(248, 200, 220, 0.3);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 40px rgba(212, 175, 55, 0.4),
+    0 0 80px rgba(245, 222, 179, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-pink-soft),
+    var(--color-gold-light),
+    var(--color-purple-gentle)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.2em;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(
+    135deg,
+    var(--color-pink-deep),
+    var(--color-gold-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.2em;
+}
+
+.gradient-text-cool {
+  background: linear-gradient(
+    135deg,
+    var(--color-purple-gentle),
+    var(--color-pink-soft)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.2em;
+}
+
+.bg-gradient-main {
+  background: radial-gradient(
+      ellipse at 20% 50%,
+      rgba(248, 200, 220, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(200, 162, 200, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      rgba(245, 222, 179, 0.06) 0%,
+      transparent 50%
+    ),
+    var(--color-bg-darker);
+}
+
+.bg-gradient-jkt {
+  background: radial-gradient(
+      ellipse at 30% 50%,
+      rgba(248, 200, 220, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 70% 20%,
+      rgba(245, 222, 179, 0.1) 0%,
+      transparent 50%
+    ),
+    var(--color-bg-darker);
+}
+
+.bg-gradient-klp {
+  background: radial-gradient(
+      ellipse at 30% 50%,
+      rgba(200, 162, 200, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 70% 20%,
+      rgba(248, 200, 220, 0.1) 0%,
+      transparent 50%
+    ),
+    var(--color-bg-darker);
+}
+
+/* ─── Sakura Petal CSS Fallback ─── */
+.sakura-petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.6;
+  animation: petal-fall linear forwards;
+}
+
+/* ─── Section Divider ─── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(248, 200, 220, 0.3),
+    rgba(200, 162, 200, 0.3),
+    transparent
+  );
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* ─── Selection Color ─── */
+::selection {
+  background: rgba(248, 200, 220, 0.3);
+  color: var(--color-cream);
+}
