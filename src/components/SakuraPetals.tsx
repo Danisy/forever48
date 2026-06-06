@@ -25,16 +25,21 @@ export default function SakuraPetals({ density = 30 }: { density?: number }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Detect mobile for reduced petal count
+    const isMobile = window.innerWidth < 768;
+    const actualDensity = isMobile ? Math.min(density, 10) : density;
+
     let animationId: number;
     let petals: Petal[] = [];
+    let lastWidth = 0;
 
-    let currentWidth = window.innerWidth;
     const resize = () => {
-      if (canvas.width !== window.innerWidth) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        currentWidth = window.innerWidth;
-      }
+      const w = window.innerWidth;
+      // Only resize when width actually changes (avoids iOS address bar thrashing)
+      if (w === lastWidth) return;
+      lastWidth = w;
+      canvas.width = w;
+      canvas.height = window.innerHeight;
     };
 
     const createPetal = (): Petal => ({
@@ -103,7 +108,7 @@ export default function SakuraPetals({ density = 30 }: { density?: number }) {
     };
 
     resize();
-    petals = Array.from({ length: density }, createPetal);
+    petals = Array.from({ length: actualDensity }, createPetal);
     // Spread initial petals across the screen
     petals.forEach((p) => {
       p.y = Math.random() * canvas.height;

@@ -17,9 +17,9 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════ */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
         {/* Background glow orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-pink-soft/8 blur-[120px] animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-gentle/8 blur-[100px] animate-float [animation-delay:3s]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gold-light/5 blur-[80px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-pink-soft/8 blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-gentle/8 blur-3xl animate-float [animation-delay:3s]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gold-light/5 blur-2xl" />
 
         {/* Main Title */}
         <motion.div
@@ -126,8 +126,8 @@ export default function HomePage() {
                 <div className="absolute inset-0 glass-card rounded-3xl" />
 
                 {/* Glow effect */}
-                <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-pink-soft/10 blur-[80px] group-hover:bg-pink-soft/20 transition-all duration-700" />
-                <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-gold-light/8 blur-[60px] group-hover:bg-gold-light/15 transition-all duration-700" />
+                <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-pink-soft/10 blur-3xl group-hover:bg-pink-soft/20 transition-all duration-700" />
+                <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-gold-light/8 blur-2xl group-hover:bg-gold-light/15 transition-all duration-700" />
 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">
@@ -169,8 +169,8 @@ export default function HomePage() {
                 <div className="absolute inset-0 glass-card rounded-3xl" />
 
                 {/* Glow effect */}
-                <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-purple-gentle/10 blur-[80px] group-hover:bg-purple-gentle/20 transition-all duration-700" />
-                <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full bg-pink-soft/8 blur-[60px] group-hover:bg-pink-soft/15 transition-all duration-700" />
+                <div className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-purple-gentle/10 blur-3xl group-hover:bg-purple-gentle/20 transition-all duration-700" />
+                <div className="absolute -bottom-20 -right-20 w-48 h-48 rounded-full bg-pink-soft/8 blur-2xl group-hover:bg-pink-soft/15 transition-all duration-700" />
 
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">

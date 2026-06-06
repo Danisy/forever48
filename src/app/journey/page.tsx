@@ -168,7 +168,7 @@ export default function JourneyPage() {
       {/* HERO */}
       {/* ═══════════════════════════════════════ */}
       <section className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-24">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-pink-soft/8 blur-[140px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-pink-soft/8 blur-3xl" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -274,8 +274,8 @@ export default function JourneyPage() {
       {/* ═══════════════════════════════════════ */}
       <section className="relative pt-20 pb-12 md:pt-40 md:pb-24 px-6 flex flex-col justify-center items-center overflow-hidden">
         {/* Soft dreamy background effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[120%] bg-pink-soft/5 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gold-light/5 blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[120%] bg-pink-soft/5 blur-3xl rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gold-light/5 blur-3xl pointer-events-none" />
         
         {/* Divider / Intro element */}
         <SectionReveal>

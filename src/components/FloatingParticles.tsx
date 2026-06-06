@@ -30,16 +30,21 @@ export default function FloatingParticles({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Detect mobile for reduced particle count
+    const isMobile = window.innerWidth < 768;
+    const actualCount = isMobile ? Math.min(count, 15) : count;
+
     let animationId: number;
     let particles: Particle[] = [];
+    let lastWidth = 0;
 
-    let currentWidth = window.innerWidth;
     const resize = () => {
-      if (canvas.width !== window.innerWidth) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        currentWidth = window.innerWidth;
-      }
+      const w = window.innerWidth;
+      // Only resize when width actually changes (avoids iOS address bar thrashing)
+      if (w === lastWidth) return;
+      lastWidth = w;
+      canvas.width = w;
+      canvas.height = window.innerHeight;
     };
 
     const createParticle = (): Particle => ({
@@ -71,20 +76,19 @@ export default function FloatingParticles({
         if (p.y < -10) p.y = canvas.height + 10;
         if (p.y > canvas.height + 10) p.y = -10;
 
-        ctx.save();
         ctx.globalAlpha = Math.max(0, currentOpacity);
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(0.5, currentSize), 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
-        ctx.restore();
       });
 
+      ctx.globalAlpha = 1;
       animationId = requestAnimationFrame(animate);
     };
 
     resize();
-    particles = Array.from({ length: count }, createParticle);
+    particles = Array.from({ length: actualCount }, createParticle);
     animate();
 
     window.addEventListener("resize", resize);

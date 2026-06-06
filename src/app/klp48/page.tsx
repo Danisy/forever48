@@ -64,8 +64,8 @@ export default function KLP48Page() {
       {/* HERO */}
       {/* ═══════════════════════════════════════ */}
       <section className="relative min-h-[70vh] flex flex-col items-center justify-center px-6 pt-24">
-        <div className="absolute top-1/3 right-1/3 w-80 h-80 rounded-full bg-purple-gentle/12 blur-[120px]" />
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-pink-soft/8 blur-[100px]" />
+        <div className="absolute top-1/3 right-1/3 w-80 h-80 rounded-full bg-purple-gentle/12 blur-3xl" />
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-pink-soft/8 blur-3xl" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -154,7 +154,7 @@ export default function KLP48Page() {
       {/* WHAT THEY MEAN TO ME */}
       {/* ═══════════════════════════════════════ */}
       <section className="py-16 md:py-24 px-6 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-96 bg-purple-gentle/5 blur-[100px] rounded-[100%] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-96 bg-purple-gentle/5 blur-3xl rounded-[100%] pointer-events-none" />
         
         <div className="max-w-3xl mx-auto relative z-10">
           <SectionReveal>
