@@ -113,11 +113,16 @@ export default function SakuraPetals({ density = 30 }: { density?: number }) {
     petals.forEach((p) => {
       p.y = Math.random() * canvas.height;
     });
-    animate();
+
+    // Delay animation start to avoid competing with initial page render
+    const startDelay = setTimeout(() => {
+      animate();
+    }, 500);
 
     window.addEventListener("resize", resize);
 
     return () => {
+      clearTimeout(startDelay);
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
     };

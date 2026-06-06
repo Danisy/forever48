@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SakuraPetals from "@/components/SakuraPetals";
-import FloatingParticles from "@/components/FloatingParticles";
+import dynamic from "next/dynamic";
 import SectionReveal from "@/components/SectionReveal";
 import MemberCard from "@/components/MemberCard";
 import TimelineItem from "@/components/TimelineItem";
 import { klp48Members } from "@/data/members";
 import { cultureTerms } from "@/data/culture";
+
+const SakuraPetals = dynamic(() => import("@/components/SakuraPetals"), { ssr: false });
+const FloatingParticles = dynamic(() => import("@/components/FloatingParticles"), { ssr: false });
 
 const songs = [
   { title: "Heavy Rotation", description: "The timeless anthem that transcends borders. Even in KLP48's hands, its magic feels brand new yet eternally familiar." },

@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SakuraPetals from "@/components/SakuraPetals";
-import FloatingParticles from "@/components/FloatingParticles";
+import dynamic from "next/dynamic";
 import SectionReveal from "@/components/SectionReveal";
 import MemberCard from "@/components/MemberCard";
 import TimelineItem from "@/components/TimelineItem";
 import { jkt48Members } from "@/data/members";
 import { cultureTerms } from "@/data/culture";
+
+const SakuraPetals = dynamic(() => import("@/components/SakuraPetals"), { ssr: false });
+const FloatingParticles = dynamic(() => import("@/components/FloatingParticles"), { ssr: false });
 
 const songs = [
   { title: "Heavy Rotation", description: "The anthem that started it all. A song about love so strong it plays on repeat in your heart, forever and always." },

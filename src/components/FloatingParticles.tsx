@@ -89,11 +89,16 @@ export default function FloatingParticles({
 
     resize();
     particles = Array.from({ length: actualCount }, createParticle);
-    animate();
+
+    // Delay animation start to avoid competing with initial page render
+    const startDelay = setTimeout(() => {
+      animate();
+    }, 300);
 
     window.addEventListener("resize", resize);
 
     return () => {
+      clearTimeout(startDelay);
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
     };

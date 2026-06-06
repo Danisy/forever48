@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import SakuraPetals from "@/components/SakuraPetals";
-import FloatingParticles from "@/components/FloatingParticles";
+import dynamic from "next/dynamic";
 import SectionReveal from "@/components/SectionReveal";
+
+const SakuraPetals = dynamic(() => import("@/components/SakuraPetals"), { ssr: false });
+const FloatingParticles = dynamic(() => import("@/components/FloatingParticles"), { ssr: false });
 
 export default function HomePage() {
   return (
