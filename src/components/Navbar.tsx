@@ -36,12 +36,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="text-xl font-heading font-bold gradient-text tracking-wide">
+        <Link href="/" className="group flex items-center gap-3">
+          <img src="/logo.jpg" alt="Forever 48 Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-xl object-cover shadow-lg shadow-pink-soft/10 group-hover:scale-105 transition-transform duration-300" />
+          <span className="text-xl font-heading font-bold gradient-text tracking-wide hidden sm:block">
             Forever 48
-          </span>
-          <span className="text-pink-soft text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            *
           </span>
         </Link>
 

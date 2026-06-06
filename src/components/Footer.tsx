@@ -9,7 +9,8 @@ export default function Footer() {
       <div className="py-12 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Logo */}
-          <Link href="/" className="inline-block mb-4">
+          <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+            <img src="/logo.jpg" alt="Forever 48 Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-xl object-cover shadow-lg shadow-pink-soft/10 group-hover:scale-105 transition-transform duration-300" />
             <span className="text-2xl font-heading font-bold gradient-text">
               Forever 48
             </span>
