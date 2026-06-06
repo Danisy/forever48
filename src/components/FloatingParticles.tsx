@@ -33,9 +33,13 @@ export default function FloatingParticles({
     let animationId: number;
     let particles: Particle[] = [];
 
+    let currentWidth = window.innerWidth;
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvas.width !== window.innerWidth) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        currentWidth = window.innerWidth;
+      }
     };
 
     const createParticle = (): Particle => ({

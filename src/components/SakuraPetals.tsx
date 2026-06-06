@@ -28,9 +28,13 @@ export default function SakuraPetals({ density = 30 }: { density?: number }) {
     let animationId: number;
     let petals: Petal[] = [];
 
+    let currentWidth = window.innerWidth;
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvas.width !== window.innerWidth) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        currentWidth = window.innerWidth;
+      }
     };
 
     const createPetal = (): Petal => ({
