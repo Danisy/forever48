@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import MemberModal from "./MemberModal";
 
 export interface MemberData {
@@ -44,10 +45,12 @@ export default function MemberCard({ member }: { member: MemberData }) {
         {/* Image container */}
         <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-pink-soft/10 to-purple-gentle/10">
           {member.imageUrl ? (
-            <img
+            <Image
               src={member.imageUrl}
               alt={member.name}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">

@@ -73,11 +73,6 @@ export default function FloatingParticles({
         ctx.arc(p.x, p.y, Math.max(0.5, currentSize), 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
-
-        // Add glow
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = p.color;
-        ctx.fill();
         ctx.restore();
       });
 

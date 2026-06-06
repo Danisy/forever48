@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { MemberData } from "./MemberCard";
 
 interface MemberModalProps {
@@ -41,7 +42,13 @@ export default function MemberModal({ member, isOpen, onClose }: MemberModalProp
 
             <div className="relative aspect-[16/9] overflow-hidden rounded-t-3xl bg-gradient-to-b from-pink-soft/10 to-purple-gentle/10">
               {member.imageUrl ? (
-                <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" />
+                <Image 
+                  src={member.imageUrl} 
+                  alt={member.name} 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  className="object-cover" 
+                />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-6xl opacity-15 font-heading">*</div>

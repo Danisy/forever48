@@ -72,18 +72,7 @@ export default function SakuraPetals({ density = 30 }: { density?: number }) {
         0
       );
 
-      const gradient = ctx.createRadialGradient(
-        petal.size * 0.25,
-        0,
-        0,
-        petal.size * 0.25,
-        0,
-        petal.size
-      );
-      gradient.addColorStop(0, "rgba(255, 220, 230, 0.9)");
-      gradient.addColorStop(0.5, "rgba(248, 200, 220, 0.7)");
-      gradient.addColorStop(1, "rgba(232, 160, 191, 0.4)");
-      ctx.fillStyle = gradient;
+      ctx.fillStyle = "rgba(248, 200, 220, 0.7)";
       ctx.fill();
 
       ctx.restore();
